@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AndhraCoasta</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: #f3f4f6;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: white;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    header h1 {
+      color: #2563eb;
+      margin: 0;
+      font-size: 32px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      padding: 12px;
+      background: #ffffff;
+      flex-wrap: wrap;
+    }
+
+    .nav button, .nav select {
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      background: #fff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .news-item {
+      background: white;
+      padding: 16px;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .news-item h3 {
+      margin: 0 0 6px;
+      color: #111;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .news-item button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .analysis {
+      margin-top: 14px;
+      padding: 14px;
+      background: #f9fafb;
+      border-left: 4px solid #2563eb;
+      border-radius: 6px;
+    }
+
+    .analysis h4 {
+      margin-bottom: 6px;
+      margin-top: 12px;
+    }
+
+    .chat-input {
+      margin-top: 10px;
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>AndhraCoasta</h1>
+</header>
+
+<div class="nav">
+  <button>International</button>
+  <button>National (India)</button>
+  <select>
+    <option>States</option>
+    <option>Andhra Pradesh</option>
+    <option>Telangana</option>
+    <option>Tamil Nadu</option>
+  </select>
+</div>
+
+<div class="container">
+
+  <div class="news-item">
+    <h3>India’s economy records strong quarterly growth</h3>
+    <div class="meta">The Hindu • 2 hours ago</div>
+    <button onclick="toggleAnalysis(1)">Summarize & Analyze</button>
+
+    <div class="analysis" id="analysis-1" style="display:none;">
+      <h4>Summary</h4>
+      <p>
+        India has reported a strong quarterly economic growth driven by
+        manufacturing, services, and increased consumer spending.
+      </p>
+
+      <h4>Impact Analysis</h4>
+      <p>
+        Economically positive, politically strengthening the current administration.
+      </p>
+
+      <h4>Positives</h4>
+      <ul>
+        <li>Job creation</li>
+        <li>Investor confidence</li>
+      </ul>
+
+      <h4>Negatives</h4>
+      <ul>
+        <li>Inflation risks</li>
+      </ul>
+
+      <h4>Suggestions / Improvements</h4>
+      <p>
+        Focus on inclusive growth and inflation control mechanisms.
+      </p>
+
+      <input class="chat-input" placeholder="Ask a follow-up question..." />
+    </div>
+  </div>
+
+  <div class="news-item">
+    <h3>Global leaders meet to discuss climate action</h3>
+    <div class="meta">BBC News • 5 hours ago</div>
+    <button onclick="toggleAnalysis(2)">Summarize & Analyze</button>
+
+    <div class="analysis" id="analysis-2" style="display:none;">
+      <h4>Summary</h4>
+      <p>
+        World leaders gathered to discuss strategies for reducing emissions
+        and accelerating renewable energy adoption.
+      </p>
+
+      <h4>Impact Analysis</h4>
+      <p>
+        Long-term environmental benefits with economic shifts toward green energy.
+      </p>
+
+      <h4>Positives</h4>
+      <ul>
+        <li>Climate awareness</li>
+        <li>Global cooperation</li>
+      </ul>
+
+      <h4>Negatives</h4>
+      <ul>
+        <li>High transition costs</li>
+      </ul>
+
+      <h4>Suggestions / Improvements</h4>
+      <p>
+        Increase funding support for developing countries.
+      </p>
+
+      <input class="chat-input" placeholder="Ask a follow-up question..." />
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function toggleAnalysis(id) {
+    const el = document.getElementById("analysis-" + id);
+    el.style.display = el.style.display === "none" ? "block" : "none";
+  }
+</script>
+
+</body>
+</html>
